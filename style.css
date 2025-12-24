@@ -218,3 +218,17 @@ img{
     color: white;
     background-color: green;
 }
+@media (max-width: 940px) and (orientation: portrait){
+    .border{
+        width: 40%;
+    }
+    .border2{
+        width: 80%;
+    }
+    .learning-border{
+        width: 90%;
+    }
+    .nav-bar{
+        font-size: 90%;
+    }
+}
