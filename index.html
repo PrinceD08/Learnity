@@ -4,174 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learnity">
-    <title>Learnity</title>
+    <meta name="description" content="Login / Signup">
+    <title>Login / Signup</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+    <script src="main.js"></script>
 </head>
 <body>
-    <section id="section1">
-        <p id="header">🎓Learnity</p>
-        <p class="nav-bar" id="nav-bar1">◯ Dashboard</p>
-        <p class="nav-bar" id="nav-bar2">▶️ Tutorials</p>
-        <p class="nav-bar" id="nav-bar3">🕮 Study Guides</p>
-        <p class="nav-bar" id="nav-bar4">🗉 Practice Tests</p>
-        <p class="nav-bar" id="nav-bar5">🗅 My Notes</p>
-        <p class="nav-bar" onclick="runAI()" id="nav-bar6">✴ AI Assistant</p>
-        <p class="nav-bar" id="nav-bar7">🗩 Community</p>
-        <p class="nav-bar" id="nav-bar8">🕭 Notificatons</p>
-        <p class="nav-bar" id="nav-bar9">❁ Settings</p>
+    <section id="mainborder">
+        <div class="video-bg">
+        <video autoplay muted loop>
+            <source src="download_20251224_114723_0000.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="content">
+        <h1>Learnity</h1>
+        <p>Study Smarter, Not harder</p>
+        <form action="">
+            <label for=""><p class="label">Email / Username </p>
+                <input id="input1" type="email" placeholder="Enter Your Email" required></label>
+                <p id="Error1"></p>
+            <label for=""><p class="label">Password </p>
+                <input id="input2" type="password" placeholder="Enter Your Password" required></label>
+                <p id="Error2"></p>
+        <input class="retrieve check" type="checkbox"><p class="retrieve">Remember Me</p>
+        <p class="retrieve password">Forgot password ?</p>
+        <button onclick="Main()" type="submit" id="signin">Sign In</button>
+        </form>
+        <p>or</p>
+        <div>
+        <p class="su-container create">Create An Account</p>
+    </div>
     </section>
-    <section id="section2">
-        <div id="header2">
-        <input type="text" id="searchbar" placeholder="🔍 Search tuorials, guides, practice tests.....">
-        </div>
-        <p id="heading2">Welcome back, John! 👋</p>
-        <p>Ready to continue your learning journey ?</p>
-        <div class="border blue">
-            <p>▶️</p>
-            <p class="bold-text">Watch Tutorials</p>
-            <p>Continue where you left</p>
-        </div>
-        <div class="border orange">
-            <p>✍</p>
-            <p class="bold-text">Take Practice Test</p>
-            <p>Test your knowledge</p>
-        </div>
-        <div class="border green">
-            <p>🕮</p>
-            <p class="bold-text">Study Guide</p>
-            <p>Read and Highlight</p>
-        </div>
-        <div class="border grey">
-            <p>🗅</p>
-            <p class="bold-text">My Notes</p>
-            <p>Review your notes</p>
-        </div>
-
-
-        <div class="border2">
-            <p>Total Hours Studied</p>
-            <p class="bold-text big">47.5</p>
-            <p>This Month</p>
-            <p><span>12% from last week</span></p>
-        </div>
-        <div class="border2">
-            <p>Courses In Progress</p>
-            <p class="bold-text big">4</p>
-            <p>2 near completion</p>
-            <p><span>2% from last week</span></p>
-        </div>
-        <div class="border2">
-            <p>Practice Tests Passed</p>
-            <p class="bold-text big">23</p>
-            <p>85% avg.score</p>
-            <p><span>8% from last week</span></p>
-        </div>
-        <div class="border2">
-            <p>Achievement Earned</p>
-            <p class="bold-text big">12</p>
-            <p>3 new this week</p>
-            <p><span>4% from last week</span></p>
-        </div>
-        <div id="continue-learn">
-            <h2>Continue Learning</h2>
-
-
-            <div class="learning-border">
-                <img src="IMG-20251223-WA0017.jpg" alt="Image">
-                <p class="bold-text">Advanced Mathematics: Calculus and Differential Equations</p>
-                <p>Dr. Sarah Johnson</p>
-                <p>🕮 24Lessons</p>
-                <p>Progress</p>
-                <div class="pb-container">
-                <div class="progress-bar math"></div>
-                </div>
-                <p class="learning-button">Continue Learning</p>
-            </div>
-            <div class="learning-border">
-                <img src="IMG-20251223-WA0018.jpg" alt="Image">
-                <p class="bold-text">Physics Fundamentals: Mechanics and Thermodynamics</p>
-                <p>Prof. Michael Chen</p>
-                <p>🕮 18Lessons</p>
-                <p>Progress</p>
-                <div class="pb-container">
-                <div class="progress-bar physics"></div>
-                </div>
-                <p class="learning-button">Continue Learning</p>
-            </div>
-
-
-
-            <div class="learning-border" id="Learning-bar">
-                <p class="bold-text big">Weekly Goals</p>
-                <div class="goals 1st">
-                    <p>Overall Progress</p>
-                    <div class="progress-bar progress"></div>
-                </div>
-                <div class="goals 2nd">
-                    <p>Complete 5 Lessons</p>
-                    <div class="progress-bar Lessons"></div>
-                </div>
-                <div class="goals 3rd">
-                    <p>Study For 10 Hours</p>
-                    <div class="progress-bar Study"></div>
-                </div>
-                <div class="goals 4th">
-                    <p>Review 20 Notes</p>
-                    <div class="progress-bar Review"></div>
-                </div>
-                <div class="goals 5th">
-                    <p>Take Practice Tests</p>
-                    <div class="progress-bar Test"></div>
-                </div>
-            </div>
-
-            <div class="learning-border">
-                <img src="IMG-20251223-WA0019.jpg" alt="Image">
-                <p class="bold-text">Organic Chemistry: Structure and Reactions</p>
-                <p>Dr. Emily Watson</p>
-                <p>🕮 20Lessons</p>
-                <p>Progress</p>
-                <div class="pb-container">
-                <div class="progress-bar chemistry"></div>
-                </div>
-                <p class="learning-button">Continue Learning</p>
-            </div>
-            <div class="learning-border">
-                <img src="IMG-20251223-WA0020.jpg" alt="Image">
-                <p class="bold-text">Biology: Cellular Processes and Genetics</p>
-                <p>Dr. James Miller</p>
-                <p>🕮 16Lessons</p>
-                <p>Progress</p>
-                <div class="pb-container">
-                <div class="progress-bar biology"></div>
-                </div>
-                <p class="learning-button">Continue Learning</p>
-            </div>
-            <div class="learning-border" id="AI-Recommendation">
-                <p>✴ AI Recommendations</p>
-                <div class="Recommendations">
-                    <p class="text practice">practice</p>
-                    <p class="text">Medium</p>
-                    <p class="bold-text">Quadratic Equations Practice</p>
-                    <p>Based on your recent quiz performance</p>
-                </div>
-                <div class="Recommendations">
-                    <p class="text tutorial">tutorial</p>
-                    <p class="text">Easy</p>
-                    <p class="bold-text">Newton's Laws of Motion</p>
-                    <p>Recommended for your current topic</p>
-                </div>
-                <div class="Recommendations">
-                    <p class="text guide">guide</p>
-                    <p class="text">Hard</p>
-                    <p class="bold-text">Chemical Bonding Study</p>
-                    <p>Prepare for upcoming test</p>
-                </div>
-                <p>View All Recommendations</p>
-            </div>
-        </div>
-</section>
+    <footer>
+        <p>By continuing, you agree to our <span>Terms of Service</span> and <span>Privacy Policy</span></p>
+    </footer>
 </body>
 </html>

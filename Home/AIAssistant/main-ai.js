@@ -25,14 +25,14 @@ function Askopenai(){
     })
     };
     function Explain1(){
-      document.getElementById("insert").value = "Explain quantum Computing";
+      document.getElementById("insert").value = "Explain the concept of derivatives";
     }
     function Explain2(){
-      document.getElementById("insert").value = "Help Me Write a Story";
+      document.getElementById("insert").value = "Help Me prepare for my physics exam";
     }
     function Explain3(){
-      document.getElementById("insert").value = "Analyze Data trends";
+      document.getElementById("insert").value = "Key topics In organic Chemistry";
     }
     function Explain4(){
-      document.getElementById("insert").value = "Debug My Code";
+      document.getElementById("insert").value = "Quiz me on cell biology";
     }

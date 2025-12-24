@@ -1,49 +1,17 @@
-function runAI(){
-    window.location.href='AIAssistant/index-ai.html'
+function Main(){
+    document.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        if(e.target.checkValidity()){
+            window.location.href='Home/home.html'
+        }
+    });
+    if (document.getElementById("input1").value === ""){
+        document.getElementById("Error1").textContent = "Please Enter a Valid Email address"
+    }
+    if (document.getElementById("input2").value === ""){
+        document.getElementById("Error2").textContent = "Password must be at least 6 characters"
+    }
+    else{
+        window.location.href='Main/main.html';
+    }
 }
-const mq = window.matchMedia("(max-width: 940px)");
-
-function handleScreen(e) {
-  if (e.matches) {
-    document.getElementById("nav-bar1").textContent= "◯";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar2").textContent = "▶️";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar3").textContent = "🕮";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar4").textContent = "🗉";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar5").textContent = "🗅";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar6").textContent = "✴";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar7").textContent = "🗩";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar8").textContent = "🕭";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar9").textContent = "❁";
-  }
-  
-  else {
-    document.getElementById("nav-bar1").textContent= "◯ Dashboard";
-    document.getElementById("nav-bar2").textContent = "▶️ Tutorials";
-    document.getElementById("nav-bar3").textContent = "🕮 Study Guides";
-    document.getElementById("nav-bar4").textContent = "🗉 Practice Tests";
-    document.getElementById("nav-bar5").textContent = "🗅 My Notes";
-    document.getElementById("nav-bar6").textContent = "✴ AI Assistant";
-    document.getElementById("nav-bar7").textContent = "🗩 Community";
-    document.getElementById("nav-bar8").textContent = "🕭 Notificatons";
-    document.getElementById("nav-bar9").textContent = "❁ Settings";
-  }
-}
-
-handleScreen(mq);
-mq.addEventListener("change", handleScreen);

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Assistant">
+    <title>AI Assistant</title>
+    <link rel="stylesheet" href="style-ai.css">
+    <link rel="stylesheet" href="../home.css">
+</head>
+<body>
+    <section id="section1">
+        <p id="header">🎓Learnity</p>
+        <p id="nav-bar1" class="nav-bar" onclick="window.location.href='../home.html'">◯ Dashboard</p>
+        <p id="nav-bar2" class="nav-bar">▶️ Tutorials</p>
+        <p id="nav-bar3" class="nav-bar">🕮 Study Guides</p>
+        <p id="nav-bar4" class="nav-bar">🗉 Practice Tests</p>
+        <p id="nav-bar5" class="nav-bar">🗅 My Notes</p>
+        <p id="nav-bar6" class="nav-bar" onclick="runAI()">✴ AI Assistant</p>
+        <p id="nav-bar7" class="nav-bar">🗩 Community</p>
+        <p id="nav-bar8" class="nav-bar">🕭 Notificatons</p>
+        <p id="nav-bar9" class="nav-bar">❁ Settings</p>
+    </section>
+
+
+    <section class="section2" id="section2">
+        <div id="header2">
+        <input type="text" id="searchbar" placeholder="🔍 Search tuorials, guides, practice tests.....">
+        </div>
+        <div id="sub-container">
+            <h2>AI Study Assistant</h2>
+        <p id="output">Hello! 👋 I'm your AI study assistant. I can help you understand difficult concepts, create practice questions, explain solutions, and recommend study materials based on your weak areas. How can I help you today?</p>
+        <p id="answer"></p>
+        <div id="container">
+        <p class="container1" onclick="Explain1()">Explain the concept of derivatives</p>
+        <p class="container1" onclick="Explain2()">Help Me prepare for mt physics exam</p>
+        <p class="container1" onclick="Explain3()">Key topics In organic Chemistry</p>
+        <p class="container1" onclick="Explain4()">Quiz me on cell biology</p>
+        </div>
+        <input type="text" id="insert" placeholder="Ask Anything..... ">
+        <br>
+        <button type="button" id="sendBtn" onclick="Askopenai()"> Ask➤</button>
+    </div>
+    </section>
+    <footer id="footer">
+        <p>AI can make mistakes. Consider checking important information.</p>
+    </footer>
+    <script src="main-ai.js" defer></script>
+    <script src="../home.js"></script>
+</body>
+</html>
