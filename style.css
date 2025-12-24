@@ -229,6 +229,7 @@ img{
         width: 90%;
     }
     .nav-bar{
-        font-size: 90%;
+        font-size: 180%;
+        text-align: center;
     }
 }
