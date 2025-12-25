@@ -45,7 +45,7 @@ footer{
 }
 @media (max-width: 640px) and (orientation: portrait){
     #mainborder{
-        margin-top: 70%;
+        margin-top: 40%;
     }
     #register, #login{
         margin: 7% auto;
