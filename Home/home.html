@@ -20,17 +20,70 @@
 </head>
 <body>
     <section id="section1">
-        <p id="header">🎓Learnity</p>
-        <p class="nav-bar" onclick="window.location.href='home.html'" id="nav-bar1"> <div id="icon-container">Home</div></p>
-        <p class="nav-bar" id="nav-bar2">▶️ Tutorials</p>
-        <p class="nav-bar" id="nav-bar3">🕮 Study Guides</p>
-        <p class="nav-bar" id="nav-bar4">🗉 Practice Tests</p>
-        <p class="nav-bar" id="nav-bar5">🗅 My Notes</p>
-        <p class="nav-bar" onclick="runAI()" id="nav-bar6">✴ AI Assistant</p>
-        <p class="nav-bar" id="nav-bar7">🗩 Community</p>
-        <p class="nav-bar" id="nav-bar8">🕭 Notificatons</p>
-        <p class="nav-bar" id="nav-bar9">❁ Settings</p>
-    </section>
+
+    <p id="header">🎓 Learnity</p>
+
+    <!-- Toggle button -->
+    <div class="nav-bar" id="menu-toggle">
+        <div class="icon-container" data-icon="dropdown"></div>
+        <span class="nav-text">Menu</span>
+    </div>
+
+    <!-- Home -->
+    <div class="nav-bar" onclick="window.location.href='home.html'">
+        <div class="icon-container" data-icon="home"></div>
+        <span class="nav-text">Home</span>
+    </div>
+
+    <!-- Tutorials -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="tutorial"></div>
+        <span class="nav-text">Tutorials</span>
+    </div>
+
+    <!-- Study Guides -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="study"></div>
+        <span class="nav-text">Study Guides</span>
+    </div>
+
+    <!-- Practice Tests -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="test"></div>
+        <span class="nav-text">Practice Tests</span>
+    </div>
+
+    <!-- My Notes -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="notes"></div>
+        <span class="nav-text">My Notes</span>
+    </div>
+
+    <!-- AI Assistant -->
+    <div class="nav-bar" onclick="runAI()">
+        <div class="icon-container" data-icon="assistant"></div>
+        <span class="nav-text">AI Assistant</span>
+    </div>
+
+    <!-- Community -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="community"></div>
+        <span class="nav-text">Community</span>
+    </div>
+
+    <!-- Notifications -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="notification"></div>
+        <span class="nav-text">Notifications</span>
+    </div>
+
+    <!-- Settings -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="settings"></div>
+        <span class="nav-text">Settings</span>
+    </div>
+
+</section>
     <section class="section2">
         <div id="header2">
         <input type="text" id="searchbar" placeholder="🔍 Search tuorials, guides, practice tests.....">

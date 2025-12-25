@@ -14,7 +14,6 @@ body{
     width: 19%;
     padding-bottom: 20%;
     display: inline-block;
-    background-color: white;
 }
 .section2{
     margin-left: 20%;
@@ -27,21 +26,20 @@ body{
     font-size: 130%;
     font-weight: 700;
 }
-.nav-bar{
+.nav-bar, .icon-container{
     color: rgb(110, 110, 110);
-    padding: 5%;
+    padding: 1% 10%;
     width: 70%;
-    font-size: 120%;
     font-weight: 500;
     margin: 2% 0%;
     border-radius: 1em;
 }
-.nav-bar:hover{
+.nav-bar:hover, .icon-container:hover{
     background-color: rgb(237, 247, 255);
     color: dodgerblue;
 }
 #header{
-    font-size: 150%;
+    font-size: 120%;
     font-weight: 700;
 }
 #header2{
@@ -229,6 +227,101 @@ img{
     width: 24px;
     height: 24px;
 }
+
+/* Make the sidebar fixed and narrow initially */
+#section1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px; /* collapsed width */
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    transition: width 0.5s ease; /* smooth transition */
+    padding-top: 2%; /* space from top */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+/* On hover, expand the sidebar */
+#section1.open {
+    width: 250px; /* expanded width */
+}
+
+#menu-toggle{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 24px;
+}
+
+.section2{
+    transition: filter 0.3s ease;
+}
+
+#section1.open ~ .section2{
+    filter : blur(10px);
+    pointer-events: none;
+}
+
+#section1.open .nav-bar {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+}
+
+/* Adjust nav-bar inside sidebar */
+.nav-bar {
+    display: flex;
+    align-items: center;
+    color: rgb(110, 110, 110);
+    font-weight: 500;
+    border-radius: 1em;
+    margin: 0.5em 0;
+    white-space: nowrap; /* prevent text from wrapping */
+    transition: all 0.3s ease;
+}
+
+/* Hide text when collapsed */
+
+
+/* Optional: show icon always */
+#icon-container {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+}
+
+/* Hover effect for nav items */
+.nav-bar:hover {
+    background-color: rgb(237, 247, 255);
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+/* SIDEBAR WIDTH STATES */
+#section1 {
+    width: 55px;
+    transition: width 0.4s ease;
+}
+
+#section1.open {
+    width: 250px;
+}
+
+/* HIDE TEXT WHEN COLLAPSED */
+#section1:not(.open) .nav-text {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* SHOW TEXT WHEN OPEN */
+#section1.open .nav-text {
+    opacity: 1;
+    width: auto;
+}
 @media (max-width: 640px) and (orientation: portrait){
     .border{
         width: 90%;
@@ -240,7 +333,6 @@ img{
         width: 90%;
     }
     .nav-bar{
-        font-size: 180%;
         text-align: center;
     }
     #header{
@@ -261,5 +353,9 @@ img{
         position: absolute;
         right: 0;
         margin-right: 3%;
+    }
+    #section1.open ~ .section2{
+        filter: none;
+        pointer-events: none;
     }
 }

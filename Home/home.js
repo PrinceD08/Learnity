@@ -1,60 +1,35 @@
 function runAI(){
     window.location.href='AIAssistant/index-ai.html'
 }
-const mq = window.matchMedia("(max-width: 640px)");
 
-function handleScreen(e) {
-  if (e.matches) {
-    document.getElementById("nav-bar1").textContent= "◯";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar2").textContent = "▶️";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar3").textContent = "🕮";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar4").textContent = "🗉";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar5").textContent = "🗅";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar6").textContent = "✴";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar7").textContent = "🗩";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar8").textContent = "🕭";
-  }
-  if (e.matches) {
-    document.getElementById("nav-bar9").textContent = "❁";
-  }
-  
-  else {
-    document.getElementById("nav-bar1").textContent= "";
-    document.getElementById("nav-bar2").textContent = "▶️ Tutorials";
-    document.getElementById("nav-bar3").textContent = "🕮 Study Guides";
-    document.getElementById("nav-bar4").textContent = "🗉 Practice Tests";
-    document.getElementById("nav-bar5").textContent = "🗅 My Notes";
-    document.getElementById("nav-bar6").textContent = "✴ AI Assistant";
-    document.getElementById("nav-bar7").textContent = "🗩 Community";
-    document.getElementById("nav-bar8").textContent = "🕭 Notificatons";
-    document.getElementById("nav-bar9").textContent = "❁ Settings";
-  }
-}
 
-handleScreen(mq);
-mq.addEventListener("change", handleScreen);
+ const iconMap = {
+  dropdown: "../Icons/menu.svg",
+  home: "../Icons/layout-dashboard.svg",
+  tutorial: "../Icons/square-play.svg",
+  study: "../Icons/book-open.svg",
+  test: "../Icons/book-text.svg",
+  notes: "../Icons/book.svg",
+  assistant: "../Icons/sparkles.svg",
+  community: "../Icons/users.svg",
+  notification: "../Icons/bell.svg",
+  settings: "../Icons/settings.svg",
+};
 
- const icon = document.createElement("img");
+document.querySelectorAll(".icon-container").forEach(container => {
+  const iconName = container.dataset.icon;
 
-  // 2. Set its src to your SVG file
-  icon.src = "../Icons/bell.svg";
+  if (iconMap[iconName]) {
+    const img = document.createElement("img");
+    img.src = iconMap[iconName];
+    img.classList.add("icon");
+    container.appendChild(img);
+  }
+});
 
-  // 3. Add a class for styling
-  icon.classList.add("icon");
+  const sidebar = document.getElementById("section1");
+const toggleBtn = document.getElementById("menu-toggle");
 
-  // 4. Append to a container in your HTML
-  document.getElementById("icon-container").appendChild(icon);
+toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+});
