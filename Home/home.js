@@ -33,7 +33,7 @@ function handleScreen(e) {
   }
   
   else {
-    document.getElementById("nav-bar1").textContent= "◯ Dashboard";
+    document.getElementById("nav-bar1").textContent= "";
     document.getElementById("nav-bar2").textContent = "▶️ Tutorials";
     document.getElementById("nav-bar3").textContent = "🕮 Study Guides";
     document.getElementById("nav-bar4").textContent = "🗉 Practice Tests";
@@ -47,3 +47,14 @@ function handleScreen(e) {
 
 handleScreen(mq);
 mq.addEventListener("change", handleScreen);
+
+ const icon = document.createElement("img");
+
+  // 2. Set its src to your SVG file
+  icon.src = "../Icons/bell.svg";
+
+  // 3. Add a class for styling
+  icon.classList.add("icon");
+
+  // 4. Append to a container in your HTML
+  document.getElementById("icon-container").appendChild(icon);

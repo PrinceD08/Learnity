@@ -89,5 +89,6 @@ span{
 @media (max-width: 640px) and (orientation: portrait){
     #content{
         width: 90%;
+        margin-top: 30%;
     }
 }

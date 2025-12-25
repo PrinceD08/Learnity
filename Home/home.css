@@ -225,6 +225,10 @@ img{
     color: white;
     background-color: green;
 }
+.icon{
+    width: 24px;
+    height: 24px;
+}
 @media (max-width: 640px) and (orientation: portrait){
     .border{
         width: 90%;
