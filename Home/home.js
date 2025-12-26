@@ -4,16 +4,16 @@ function runAI(){
 
 
  const iconMap = {
-  dropdown: "../Icons/menu.svg",
-  home: "../Icons/layout-dashboard.svg",
-  tutorial: "../Icons/square-play.svg",
-  study: "../Icons/book-open.svg",
-  test: "../Icons/book-text.svg",
-  notes: "../Icons/book.svg",
-  assistant: "../Icons/sparkles.svg",
-  community: "../Icons/users.svg",
-  notification: "../Icons/bell.svg",
-  settings: "../Icons/settings.svg",
+  dropdown: "../Home/Icons/menu.svg",
+  home: "../Home/Icons/layout-dashboard.svg",
+  tutorial: "../Home/Icons/square-play.svg",
+  study: "../Home/Icons/book-open.svg",
+  test: "../Home/Icons/book-text.svg",
+  notes: "../Home/Icons/book.svg",
+  assistant: "../Home/Icons/sparkles.svg",
+  community: "../Home/Icons/users.svg",
+  notification: "../Home/Icons/bell.svg",
+  settings: "../Home/Icons/settings.svg",
 };
 
 document.querySelectorAll(".icon-container").forEach(container => {
