@@ -41,7 +41,7 @@ function Askopenai(){
   test: "../Icons/book-text.svg",
   notes: "../Icons/book.svg",
   assistant: "../Icons/sparkles.svg",
-  community: "../Icons/users.svg",
+  calculator: "../Icons/calculator.svg",
   notification: "../Icons/bell.svg",
   settings: "../Icons/settings.svg",
 };

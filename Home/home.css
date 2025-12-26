@@ -45,7 +45,6 @@ body{
     backdrop-filter: blur(10px);
     padding: 1% 2%;
     border-radius: 1em;
-    margin-top: 4%;
 }
 #searchbar{
     background-color: rgb(240, 240, 240);
@@ -285,6 +284,31 @@ img{
     cursor: pointer;
 }
 
+.calculator-frame {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 260px;
+  height: 360px;
+
+  border: none;
+  z-index: 9999;
+}
+
+.calculator-frame {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;
+  height: 360px;
+  border: none;
+  z-index: 998;
+
+  display: none;
+}
+
+
 @media (max-width: 640px) and (orientation: portrait){
     .border{
         width: 90%;
@@ -300,6 +324,9 @@ img{
     }
     #header{
         font-size: 110%;
+    }
+    #header2{
+        margin-top: 4%;
     }
     .section2{
         margin-top: 6%;
