@@ -70,3 +70,40 @@ document.addEventListener("click", (e) => {
         menu.style.display = "none";
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const calcBtn = document.getElementById("calcBtn");
+  const calculator = document.getElementById("calculatorFrame");
+
+  if (!calcBtn || !calculator) {
+    console.error("Calculator button or iframe not found");
+    return;
+  }
+
+  calcBtn.addEventListener("click", () => {
+    calculator.style.display =
+      calculator.style.display === "none" ? "block" : "none";
+  });
+});
+
+let outsideClickCount = 0;
+
+document.addEventListener("click", (event) => {
+  const calculator = document.getElementById("calculatorFrame");
+  const calcBtn = document.getElementById("calcBtn");
+
+  if (
+    calculator.style.display === "block" &&
+    !calculator.contains(event.target) &&
+    !calcBtn.contains(event.target)
+  ) {
+    outsideClickCount++;
+
+    if (outsideClickCount >= 2) {
+      calculator.style.display = "none";
+      outsideClickCount = 0; // reset counter
+    }
+  } else {
+    outsideClickCount = 0;
+  }
+});

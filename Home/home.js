@@ -63,7 +63,6 @@ document.addEventListener("click", (event) => {
   const calculator = document.getElementById("calculatorFrame");
   const calcBtn = document.getElementById("calcBtn");
 
-  // Only count clicks if calculator is visible and click is outside
   if (
     calculator.style.display === "block" &&
     !calculator.contains(event.target) &&
@@ -76,7 +75,14 @@ document.addEventListener("click", (event) => {
       outsideClickCount = 0; // reset counter
     }
   } else {
-    // Click inside calculator or button resets the counter
     outsideClickCount = 0;
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const storedUser = localStorage.getItem("learnity_username");
+
+    if (storedUser) {
+      document.getElementById("Username").textContent = storedUser;
+    }
+  });

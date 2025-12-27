@@ -17,6 +17,7 @@
 
 <link rel="stylesheet" href="home.css">
     <script src="home.js" defer></script>
+
 </head>
 <body>
     <iframe src="../Calculator/calc.html" id="calculatorFrame" class="calculator-frame"></iframe>
@@ -75,7 +76,7 @@
     </div>
 
     <!-- Settings -->
-    <div class="nav-bar">
+    <div class="nav-bar" onclick="window.location.href='../Setting/setting.html'">
         <div class="icon-container" data-icon="settings"></div>
         <span class="nav-text">Settings</span>
     </div>
@@ -85,7 +86,7 @@
         <div id="header2">
         <input type="text" id="searchbar" placeholder="🔍 Search tuorials, guides, practice tests.....">
         </div>
-        <p id="heading2">Welcome back, John! 👋</p>
+        <p id="heading2">Welcome back,<span id="Username"> John</span>! 👋</p>
         <p>Ready to continue your learning journey ?</p>
         <div class="border blue">
             <p>▶️</p>
