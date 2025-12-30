@@ -1,0 +1,345 @@
+body{
+    font-family: 'Inter', sans-serif;
+    background-color: rgb(244, 255, 255);
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+    }
+}
+
+.section2{
+    width: 98%;
+    display: inline-block;
+    padding-left: 2%;
+}
+#heading{
+    font-size: 130%;
+    font-weight: 700;
+}
+.nav-bar, .icon-container{
+    color: rgb(110, 110, 110);
+    padding: 1% 10%;
+    width: 70%;
+    font-weight: 500;
+    margin: 2% 0%;
+    border-radius: 1em;
+}
+.nav-bar:hover, .icon-container:hover{
+    background-color: rgb(69, 163, 239);
+    color: rgb(36, 146, 255);
+}
+#header{
+    font-size: 120%;
+    font-weight: 700;
+    text-align: center;
+}
+#header2{
+    position: fixed;
+    width: 79%;
+    top: 0;
+    left: 70px;
+    background-color: rgba(255, 255, 255, 0.739);
+    backdrop-filter: blur(10px);
+    padding: 1% 2%;
+    border-radius: 1em;
+}
+#searchbar{
+    background-color: rgb(240, 240, 240);
+    width: 90%;
+    border-radius: 1em;
+    font-size: 100%;
+    padding: 1%;
+    border: solid 1px white;
+}
+#searchbar:hover{
+    border: solid 1px blue;
+}
+#heading2{
+    font-size: 200%;
+    font-weight: 700;
+    margin-top: 70px;
+}
+.border, .border2{
+    width: 17%;
+    display: inline-block;
+    padding: 1% 2%;
+    border-radius: 1em;
+    margin: 1%;
+}
+.border2{
+    background-color: white;
+    margin-top: 2%;
+}
+.big{
+    font-size: 150%;
+}
+span{
+    color: rgb(2, 197, 2);
+}
+.border:hover{
+    box-shadow: 0 0 20px rgb(180, 180, 180);
+    transform: translateY(-5%);
+    transition: 1s;
+}
+.bold-text{
+    font-weight: 700;
+}
+.blue{
+    background: linear-gradient(to right, dodgerblue,rgb(83, 169, 255));
+    color: white;
+}
+.orange{
+    background: linear-gradient(to right, orange, orangered);
+    color: white;
+}
+.green{
+    background: linear-gradient(to right, rgb(91, 135, 91), rgb(37, 101, 37));
+    color: white;
+}
+.grey{
+    background-color: rgb(234, 233, 233);
+    color: white;
+}
+img{
+    width: 100%;
+    border-radius: 1em;
+}
+.learning-border{
+    margin: 1%;
+    width: 30%;
+    border: solid 1px rgb(229, 229, 229);
+    border-radius: 1em;
+    display: inline-block;
+    overflow: hidden;
+}
+.learning-border:hover .bold-text{
+    color: dodgerblue;
+}
+.learning-border:hover img{
+    transform: scale(1.1);
+    transition: 1s;
+}
+.learning-border:hover p{
+    transform: scale(1.03);
+    transition: 1s;
+}
+#Learning-bar{
+    height: 600px;
+    text-align: left;
+    padding-left: 2%;
+    
+}
+.learning-button{
+    width: 80%;
+    border-radius: 1em;
+    color: white;
+    background-color: orange;
+    padding: 4% 0;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+.goals{
+    width: 80%;
+    background-color: rgb(184, 255, 184);
+    border-radius: 1em;
+    padding: 3% 3%;
+    margin: 8% 0;
+}
+.pb-container{
+    background-color: rgb(161, 255, 255);
+    width: 90%;
+    margin: 3% 5%;
+    border-radius: 1em;
+}
+.progress-bar{
+    background-color: green;
+    border-radius: 1em;
+    height: 10px;
+}
+.progress{
+    width: 50%;
+
+}
+.Lessons{
+    width: 70%;
+}
+.Study{
+    width: 40%;
+}
+.Review{
+    width: 60%;
+}
+.Test{
+    width: 30%;
+}
+.math{
+    background-color: dodgerblue;
+    width: 60%;
+}
+.physics{
+    background-color: dodgerblue;
+    width: 80%;
+}
+.chemistry{
+    background-color: dodgerblue;
+    width: 40%;
+}
+.biology{
+    background-color: dodgerblue;
+    width: 20%;
+}
+.learning-border p{
+    padding-left: 3%;
+}
+.text{
+    display: inline-block;
+    border-radius: 1em;
+    background-color: white;
+    padding: 1%;
+    margin-left: 6%;
+}
+.Recommendations{
+    background-color: rgb(240, 239, 239);
+    padding: 2%;
+    margin: 5%;
+    border-radius: 1em;
+}
+.practice{
+    color: orange;
+    background-color: rgb(255, 236, 200);
+}
+.tutorial{
+    color: dodgerblue;
+    background-color: rgb(206, 231, 255);
+}
+.guide{
+    color: white;
+    background-color: green;
+}
+.icon{
+    width: 24px;
+    height: 24px;
+}
+
+/* Make the sidebar fixed and narrow initially */
+#section1 {
+    position: fixed;
+    left: 15px;
+    width: 240px; /* collapsed width */
+    height: 100%;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    border-radius: 1em;
+    padding: 10px;
+    z-index: 999;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+#floating-menu-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    background: dodgerblue;
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+
+
+.section2{
+    transition: filter 0.3s ease;
+}
+
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    color: rgb(110, 110, 110);
+    font-weight: 500;
+    border-radius: 1em;
+    margin: 0.5em 0;
+    white-space: nowrap; /* prevent text from wrapping */
+    transition: all 0.3s ease;
+}
+
+.nav-bar:hover {
+    background-color: rgb(69, 163, 239);
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+.calculator-frame {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 260px;
+  height: 360px;
+
+  border: none;
+  z-index: 9999;
+}
+
+.calculator-frame {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;
+  height: 360px;
+  border: none;
+  z-index: 998;
+
+  display: none;
+}
+
+
+@media (max-width: 640px) and (orientation: portrait){
+    .border{
+        width: 90%;
+    }
+    .border2{
+        width: 80%;
+    }
+    .learning-border{
+        width: 90%;
+    }
+    .nav-bar{
+        text-align: center;
+    }
+    #header{
+        font-size: 110%;
+    }
+    #header2{
+        margin-top: 4%;
+    }
+    .section2{
+        margin-top: 6%;
+    }
+    #searchbar{
+        height: 40px;
+        width: 90%;
+    }
+    #sendBtn{
+        width: 50%;
+        margin-top: 5%;
+    }
+    #section2{
+        width: 95%;
+    }
+    #footer{
+        position: absolute;
+        bottom: 0;
+    }
+}

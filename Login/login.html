@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Login</title>
+    <link rel="stylesheet" href="../Signup/signup.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js" defer></script>
+    <script src="../firebase.js" defer></script>
+    <script src="login.js" defer></script>
+</head>
+<body>
+    <section>
+        <section id="mainborder">
+        <div class="video-bg">
+        <video autoplay muted loop>
+            <source src="download_20251225_154030_0000.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="content">
+        <h1>Learnity</h1>
+        <form id="loginForm">
+            <label for=""><p class="label">Email</p>
+                <input id="inputEmail" type="email" placeholder="Enter Your Email" required></label>
+                <p id="Error1"></p>
+                
+            <label for=""><p class="label">Password</p>
+                <input id="inputPassword" type="password" placeholder="Enter Your Password" required></label>
+                <p id="Error2"></p>
+        <input class="retrieve check" type="checkbox"><p class="retrieve">Remember Me</p>
+        <p class="retrieve password" id="forgotPassword">Forgot password ?</p>
+        <button type="submit" id="loginButton">Login</button>
+        </form>
+        <p>or</p>
+        <div>
+        <p class="su-container create">Create An Account</p>
+    </div>
+    </section>
+    <footer>
+        <p>By continuing, you agree to our <span>Terms of Service</span> and <span>Privacy Policy</span></p>
+    </footer>
+    </section>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Assistant">
+    <title>AI Assistant</title>
+    <link rel="stylesheet" href="style-ai.css">
+    <link rel="stylesheet" href="../home.css">
+<body>
+     <iframe src="../../Calculator/calc.html" id="calculatorFrame" class="calculator-frame"></iframe>
+    <button id="floating-menu-btn">☰</button>
+    <section id="section1">
+
+        <p id="header"><span>•</span>Active</p>
+
+
+    <!-- Home -->
+    <div class="nav-bar" onclick="window.location.href='../home.html'">
+        <div class="icon-container" data-icon="home"></div>
+        <span class="nav-text">Home</span>
+    </div>
+
+    <!-- Tutorials -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="tutorial"></div>
+        <span class="nav-text">Tutorials</span>
+    </div>
+
+    <!-- Study Guides -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="study"></div>
+        <span class="nav-text">Study Guides</span>
+    </div>
+
+    <!-- Practice Tests -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="test"></div>
+        <span class="nav-text">Practice Tests</span>
+    </div>
+
+    <!-- My Notes -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="notes"></div>
+        <span class="nav-text">My Notes</span>
+    </div>
+
+    <!-- AI Assistant -->
+    <div class="nav-bar" onclick="runAI()">
+        <div class="icon-container" data-icon="assistant"></div>
+        <span class="nav-text">AI Assistant</span>
+    </div>
+
+    <!-- Calculator -->
+    <div class="nav-bar" id="calcBtn">
+        <div class="icon-container" data-icon="calculator"></div>
+        <span class="nav-text">Calculator</span>
+    </div>
+
+    <!-- Notifications -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="notification"></div>
+        <span class="nav-text">Notifications</span>
+    </div>
+
+    <!-- Settings -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="settings"></div>
+        <span class="nav-text">Settings</span>
+    </div>
+
+</section>
+
+
+    <section class="section2" id="section2">
+        <div id="header2">
+        <input type="text" id="searchbar" placeholder="🔍 Search tuorials, guides, practice tests.....">
+        </div>
+        <div id="sub-container">
+            <h2>AI Study Assistant</h2>
+        <p id="output">Hello! 👋 I'm your AI study assistant. I can help you understand difficult concepts, create practice questions, explain solutions, and recommend study materials based on your weak areas. How can I help you today?</p>
+        <p id="no-text"></p>
+        <p id="answer"></p>
+        <div id="container">
+        <input type="text" id="insert" placeholder="Ask Anything..... ">
+        <br>
+        <div id="sendBtn" onclick="Askopenai()">
+        <div class="icon-container" data-icon="ask"></div>
+        <span class="nav-text"></span>
+        </div>
+
+    </div>
+    </section>
+    <footer id="footer">
+        <p>AI can make mistakes. Consider checking important information.</p>
+    </footer>
+    <script src="main-ai.js" defer></script>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+body{
+    background-color: white;
+}
+#searchBar{
+    position: fixed;
+    width: 59%;
+    top: 0;
+    left: 70px;
+    background-color: rgba(255, 255, 255, 0.739);
+    backdrop-filter: blur(10px);
+    padding: 1% 2%;
+    border-radius: 1em;
+    margin-top: 1%;
+}
+#search{
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    right: 200px;
+    background-color: rgba(255, 255, 255, 0.739);
+    backdrop-filter: blur(10px);
+    padding: 1% 2%;
+    border-radius: 1em;
+    margin-top: 1%;
+}
+#search:hover{
+    background-color: dodgerblue;
+}
+iframe{
+    margin: 2% 2%;
+    text-align: center;
+    width: 95%;
+}
+@media (max-width: 640px) and (orientation: portrait){
+    #searchBar{
+        width: 30%;
+        margin-top: 7%;
+    }
+    #search{
+        right: 100px;
+        margin-top: 7%;
+    }
+}

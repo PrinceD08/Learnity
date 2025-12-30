@@ -1,0 +1,19 @@
+#username{
+    border-radius: 1em;
+    margin: 5% 0;
+    height: 25px;
+}
+#section2{
+    margin-top: 100px;
+    padding: 3%;
+}
+#saveBtn{
+    padding: 2% 3%;
+    background-color: dodgerblue;
+    border-radius: 1em;
+}
+#darkMode{
+    cursor: pointer;
+    color: dodgerblue;
+    margin-top: 20px;
+}

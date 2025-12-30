@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learnity">
+    <title>Learnity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+<link rel="stylesheet" href="home.css">
+    <script src="home.js" defer></script>
+    <script src="../firebase.js"></script>
+    <script src="../darkMode.js" defer></script>
+
+</head>
+<body>
+    <iframe src="../Calculator/calc.html" id="calculatorFrame" class="calculator-frame"></iframe>
+    <button id="floating-menu-btn">☰</button>
+    <section id="section1">
+
+        <p id="header"><span>•</span>Learnity</p>
+
+
+    <!-- Home -->
+    <div class="nav-bar" onclick="window.location.href='home.html'">
+        <div class="icon-container" data-icon="home"></div>
+        <span class="nav-text">Home</span>
+    </div>
+
+    <!-- Tutorials -->
+    <div class="nav-bar" onclick="window.location.href='Tutorials/index-tur.html'">
+        <div class="icon-container" data-icon="tutorial"></div>
+        <span class="nav-text">Tutorials</span>
+    </div>
+
+    <!-- Study Guides -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="study"></div>
+        <span class="nav-text">Study Guides</span>
+    </div>
+
+    <!-- Practice Tests -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="test"></div>
+        <span class="nav-text">Practice Tests</span>
+    </div>
+
+    <!-- My Notes -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="notes"></div>
+        <span class="nav-text">My Notes</span>
+    </div>
+
+    <!-- AI Assistant -->
+    <div class="nav-bar" onclick="runAI()">
+        <div class="icon-container" data-icon="assistant"></div>
+        <span class="nav-text">AI Assistant</span>
+    </div>
+
+    <!-- Calculator -->
+    <div class="nav-bar" id="calcBtn">
+        <div class="icon-container" data-icon="calculator"></div>
+        <span class="nav-text">Calculator</span>
+    </div>
+
+    <!-- Notifications -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="notification"></div>
+        <span class="nav-text">Notifications</span>
+    </div>
+
+    <!-- Settings -->
+    <div class="nav-bar" onclick="window.location.href='../Setting/setting.html'">
+        <div class="icon-container" data-icon="settings"></div>
+        <span class="nav-text">Settings</span>
+    </div>
+
+</section>
+    <section class="section2">
+        <div id="header2">
+        <input type="text" id="searchbar" placeholder="🔍 Search tuorials, guides, practice tests.....">
+        </div>
+        <p id="heading2">Welcome back,<span id="Username"> John</span>! 👋</p>
+        <p>Ready to continue your learning journey ?</p>
+        <div class="border blue">
+            <p>▶️</p>
+            <p class="bold-text">Watch Tutorials</p>
+            <p>Continue where you left</p>
+        </div>
+        <div class="border orange">
+            <p>✍</p>
+            <p class="bold-text">Take Practice Test</p>
+            <p>Test your knowledge</p>
+        </div>
+        <div class="border green">
+            <p>🕮</p>
+            <p class="bold-text">Study Guide</p>
+            <p>Read and Highlight</p>
+        </div>
+        <div class="border grey">
+            <p>🗅</p>
+            <p class="bold-text">My Notes</p>
+            <p>Review your notes</p>
+        </div>
+
+
+        <div class="border2">
+            <p>Total Hours Studied</p>
+            <p class="bold-text big">47.5</p>
+            <p>This Month</p>
+            <p><span>12% from last week</span></p>
+        </div>
+        <div class="border2">
+            <p>Courses In Progress</p>
+            <p class="bold-text big">4</p>
+            <p>2 near completion</p>
+            <p><span>2% from last week</span></p>
+        </div>
+        <div class="border2">
+            <p>Practice Tests Passed</p>
+            <p class="bold-text big">23</p>
+            <p>85% avg.score</p>
+            <p><span>8% from last week</span></p>
+        </div>
+        <div class="border2">
+            <p>Achievement Earned</p>
+            <p class="bold-text big">12</p>
+            <p>3 new this week</p>
+            <p><span>4% from last week</span></p>
+        </div>
+        <div id="continue-learn">
+            <h2>Continue Learning</h2>
+
+
+            <div class="learning-border">
+                <img src="IMG-20251223-WA0017.jpg" alt="Image">
+                <p class="bold-text">Advanced Mathematics: Calculus and Differential Equations</p>
+                <p>Dr. Sarah Johnson</p>
+                <p>🕮 24Lessons</p>
+                <p>Progress</p>
+                <div class="pb-container">
+                <div class="progress-bar math"></div>
+                </div>
+                <p class="learning-button">Continue Learning</p>
+            </div>
+            <div class="learning-border">
+                <img src="IMG-20251223-WA0018.jpg" alt="Image">
+                <p class="bold-text">Physics Fundamentals: Mechanics and Thermodynamics</p>
+                <p>Prof. Michael Chen</p>
+                <p>🕮 18Lessons</p>
+                <p>Progress</p>
+                <div class="pb-container">
+                <div class="progress-bar physics"></div>
+                </div>
+                <p class="learning-button">Continue Learning</p>
+            </div>
+
+
+
+            <div class="learning-border" id="Learning-bar">
+                <p class="bold-text big">Weekly Goals</p>
+                <div class="goals 1st">
+                    <p>Overall Progress</p>
+                    <div class="progress-bar progress"></div>
+                </div>
+                <div class="goals 2nd">
+                    <p>Complete 5 Lessons</p>
+                    <div class="progress-bar Lessons"></div>
+                </div>
+                <div class="goals 3rd">
+                    <p>Study For 10 Hours</p>
+                    <div class="progress-bar Study"></div>
+                </div>
+                <div class="goals 4th">
+                    <p>Review 20 Notes</p>
+                    <div class="progress-bar Review"></div>
+                </div>
+                <div class="goals 5th">
+                    <p>Take Practice Tests</p>
+                    <div class="progress-bar Test"></div>
+                </div>
+            </div>
+
+            <div class="learning-border">
+                <img src="IMG-20251223-WA0019.jpg" alt="Image">
+                <p class="bold-text">Organic Chemistry: Structure and Reactions</p>
+                <p>Dr. Emily Watson</p>
+                <p>🕮 20Lessons</p>
+                <p>Progress</p>
+                <div class="pb-container">
+                <div class="progress-bar chemistry"></div>
+                </div>
+                <p class="learning-button">Continue Learning</p>
+            </div>
+            <div class="learning-border">
+                <img src="IMG-20251223-WA0020.jpg" alt="Image">
+                <p class="bold-text">Biology: Cellular Processes and Genetics</p>
+                <p>Dr. James Miller</p>
+                <p>🕮 16Lessons</p>
+                <p>Progress</p>
+                <div class="pb-container">
+                <div class="progress-bar biology"></div>
+                </div>
+                <p class="learning-button">Continue Learning</p>
+            </div>
+            <div class="learning-border" id="AI-Recommendation">
+                <p>✴ AI Recommendations</p>
+                <div class="Recommendations">
+                    <p class="text practice">practice</p>
+                    <p class="text">Medium</p>
+                    <p class="bold-text">Quadratic Equations Practice</p>
+                    <p>Based on your recent quiz performance</p>
+                </div>
+                <div class="Recommendations">
+                    <p class="text tutorial">tutorial</p>
+                    <p class="text">Easy</p>
+                    <p class="bold-text">Newton's Laws of Motion</p>
+                    <p>Recommended for your current topic</p>
+                </div>
+                <div class="Recommendations">
+                    <p class="text guide">guide</p>
+                    <p class="text">Hard</p>
+                    <p class="bold-text">Chemical Bonding Study</p>
+                    <p>Prepare for upcoming test</p>
+                </div>
+                <p>View All Recommendations</p>
+            </div>
+        </div>
+</section>
+</body>
+</html>

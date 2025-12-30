@@ -1,0 +1,62 @@
+body{
+    background-position: center;
+    background: url('20251225_151211_0000.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0;
+    animation: fadeIn 4s ease-in-out forwards;
+}
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+    }
+}
+#mainborder, footer{
+    margin-top: 15%;
+    text-align: center;
+}
+h1{
+    font-size: 400%;
+    background: linear-gradient(to right, black,rgb(121, 121, 121));
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+span{
+    color: purple;
+}
+#register, #login{
+    display: inline-block;
+    padding: 1% 10%;
+    border-radius: 1em;
+    background-color: white;
+    text-align: center;
+    display: inline-block;
+    margin-right: 3%;
+}
+#login{
+    background-color: blue;
+}
+#register:hover, #login:hover{
+    transform: scale(1.02);
+    transition: 1s;
+}
+footer{
+    margin-top: 5%;
+}
+@media (max-width: 640px) and (orientation: portrait){
+    #mainborder{
+        margin-top: 40%;
+    }
+    #register, #login{
+        margin: 7% auto;
+        display: block;
+        padding: 3% 0;
+        width: 50%;
+    }
+    #footer{
+        margin-top: 40%;
+    }
+}

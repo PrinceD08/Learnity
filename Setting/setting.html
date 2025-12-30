@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Settings">
+    <title>Settings</title>
+    <link rel="stylesheet" href="setting.css">
+    <link rel="stylesheet" href="../Home/home.css">
+    <script src="../Home/home.js" defer></script>
+    <script src="setting.js" defer></script>
+    <script src="../darkMode.js" defer></script>
+</head>
+<body>
+    <button id="floating-menu-btn">☰</button>
+    <section id="section1">
+
+        <p id="header"><span>•</span>Learnity</p>
+
+
+    <!-- Home -->
+    <div class="nav-bar" onclick="window.location.href='../Home/home.html'">
+        <div class="icon-container" data-icon="home"></div>
+        <span class="nav-text">Home</span>
+    </div>
+
+    <!-- Tutorials -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="tutorial"></div>
+        <span class="nav-text">Tutorials</span>
+    </div>
+
+    <!-- Study Guides -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="study"></div>
+        <span class="nav-text">Study Guides</span>
+    </div>
+
+    <!-- Practice Tests -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="test"></div>
+        <span class="nav-text">Practice Tests</span>
+    </div>
+
+    <!-- My Notes -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="notes"></div>
+        <span class="nav-text">My Notes</span>
+    </div>
+
+    <!-- AI Assistant -->
+    <div class="nav-bar" onclick="runAI()">
+        <div class="icon-container" data-icon="assistant"></div>
+        <span class="nav-text">AI Assistant</span>
+    </div>
+
+    <!-- Calculator -->
+    <div class="nav-bar" id="calcBtn">
+        <div class="icon-container" data-icon="calculator"></div>
+        <span class="nav-text">Calculator</span>
+    </div>
+
+    <!-- Notifications -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="notification"></div>
+        <span class="nav-text">Notifications</span>
+    </div>
+
+    <!-- Settings -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="settings"></div>
+        <span class="nav-text">Settings</span>
+    </div>
+
+</section>
+<section id="section2">
+    <div id="header2">
+        <input type="text" id="searchbar" placeholder="🔍 Search tuorials, guides, practice tests.....">
+        </div>
+    <label for="">Username <br>
+    <input type="text" id="username" placeholder="Enter your username"></label>
+    <br>
+    <button id="saveBtn">Save</button>
+
+    <p onclick="darkMode()" id="darkMode">Dark Mode</p>
+</section>
+
+</body>
+</html>
