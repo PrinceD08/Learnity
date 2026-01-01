@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tutorials">
-    <title>Tutorials</title>
-    <link rel="stylesheet" href="index-tur.css">
+    <meta name="description" content="Study Guide">
+    <title>Study Guide</title>
     <link rel="stylesheet" href="../home.css">
-    <script src="main-tur.js" defer></script>
+    <link rel="stylesheet" href="study.css">
+    <script src="study.js" defer></script>
 </head>
 <body>
     <button id="floating-menu-btn">☰</button>
@@ -66,17 +66,18 @@
     </div>
 
     <!-- Settings -->
-    <div class="nav-bar" onclick="window.location.href='../../Setting/setting.html'">
+    <div class="nav-bar" onclick="window.location.href='../Setting/setting.html'">
         <div class="icon-container" data-icon="settings"></div>
         <span class="nav-text">Settings</span>
     </div>
 
 </section>
-
-    <section id="section2">
-        <input type="text" id="searchBar" placeholder="Search Course Tutorials">
-        <button id="search" onclick="searchVideos()">Search</button>
-        <div id="videos"></div>
-    </section>
+<section id="section2">
+    <h1>List Of Courses</h1>
+    <div class="courses" onclick="window.location.href='Reader/GST101.html'">
+        <p class="course-title">GST 101</p>
+        <p>Use of English & Communication Skills</p>
+    </div>
+</section>
 </body>
 </html>

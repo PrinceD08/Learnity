@@ -33,11 +33,11 @@ iframe{
 }
 @media (max-width: 640px) and (orientation: portrait){
     #searchBar{
-        width: 30%;
+        width: 50%;
         margin-top: 7%;
     }
     #search{
-        right: 100px;
+        right: 20px;
         margin-top: 7%;
     }
 }
