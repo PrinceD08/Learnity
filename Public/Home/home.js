@@ -87,9 +87,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
-  auth.onAuthStateChanged((user) => {
-    if (!user) {
-      window.location.href = "../Login/index.html"; // redirect if not logged in
-    }
-  });
