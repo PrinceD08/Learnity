@@ -15,8 +15,8 @@
 <body>
     <button id="floating-menu-btn">☰</button>
     <section id="section1">
-
-        <p id="header"><span>•</span>Learnity</p>
+        <h1>Settings</h1>
+        <p>Manage your account</p>
 
 
     <!-- Home -->
@@ -25,52 +25,9 @@
         <span class="nav-text">Home</span>
     </div>
 
-    <!-- Tutorials -->
-    <div class="nav-bar">
+    <div class="nav-bar" onclick="window.location.href='#profile3'">
         <div class="icon-container" data-icon="tutorial"></div>
-        <span class="nav-text">Tutorials</span>
-    </div>
-
-    <!-- Study Guides -->
-    <div class="nav-bar">
-        <div class="icon-container" data-icon="study"></div>
-        <span class="nav-text">Study Guides</span>
-    </div>
-
-    <!-- Practice Tests -->
-    <div class="nav-bar">
-        <div class="icon-container" data-icon="test"></div>
-        <span class="nav-text">Practice Tests</span>
-    </div>
-
-    <!-- My Notes -->
-    <div class="nav-bar">
-        <div class="icon-container" data-icon="notes"></div>
-        <span class="nav-text">My Notes</span>
-    </div>
-
-    <!-- AI Assistant -->
-    <div class="nav-bar" onclick="runAI()">
-        <div class="icon-container" data-icon="assistant"></div>
-        <span class="nav-text">AI Assistant</span>
-    </div>
-
-    <!-- Calculator -->
-    <div class="nav-bar" id="calcBtn">
-        <div class="icon-container" data-icon="calculator"></div>
-        <span class="nav-text">Calculator</span>
-    </div>
-
-    <!-- Notifications -->
-    <div class="nav-bar">
-        <div class="icon-container" data-icon="notification"></div>
-        <span class="nav-text">Notifications</span>
-    </div>
-
-    <!-- Settings -->
-    <div class="nav-bar">
-        <div class="icon-container" data-icon="settings"></div>
-        <span class="nav-text">Settings</span>
+        <span class="nav-text">Appearance</span>
     </div>
 
 </section>
@@ -78,12 +35,32 @@
     <div id="header2">
         <input type="text" id="searchbar" placeholder="🔍 Search tuorials, guides, practice tests.....">
         </div>
-    <label for="">Username <br>
-    <input type="text" id="username" placeholder="Enter your username"></label>
+        <h1>Profile </h1>
+        <p>Manage your personal information</p>
+        <div class="profile" id="profile">
+            <h2>Personal Information</h2>
+            <label> <p class="username">Full Name</p>
+    <input type="text" class="inputsection" placeholder="Enter your Full Name"></label>
+
+    <label> <p class="username">Username</p>
+    <input type="text" class="inputsection" placeholder="Enter your username"></label>
     <br>
     <button id="saveBtn">Save</button>
-
+        </div>
+        <div class="profile" id="profile2">
+            <h2>Contact Information</h2>
+            <label> <p class="username">Email address</p>
+    <input type="text" class="inputsection2" placeholder="john@example.com"></label>
+    <label> <p class="username">Phone Number</p>
+    <input type="text" class="inputsection2" placeholder="+1 (555) 123-4567"></label>
+    <button id="save">Save</button>
+        </div>
+        <div class="profile" id="profile3">
+            <h2>Theme</h2>
+            <p>Select your preferred color scheme</p>
     <p onclick="darkMode()" id="darkMode">Dark Mode</p>
+    <p onclick="lightMode()" id="lightMode">Light Mode</p>
+        </div>
 </section>
 
 </body>

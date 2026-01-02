@@ -308,9 +308,11 @@ img{
 @media (max-width: 640px) and (orientation: portrait){
     .border{
         width: 90%;
+        margin-top: 7%;
     }
     .border2{
         width: 80%;
+        margin-top: 7%;
     }
     .learning-border{
         width: 90%;
