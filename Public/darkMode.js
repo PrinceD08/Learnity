@@ -22,7 +22,7 @@ function lightMode() {
 // ----- Theme styles -----
 
 function applyDarkMode() {
-    document.body.style.backgroundColor = "black";
+    document.body.style.backgroundColor = "rgba(46, 46, 46, 1)";
     document.body.style.color = "white";
 
     setShadow("profile");
