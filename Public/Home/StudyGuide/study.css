@@ -1,9 +1,31 @@
+#container{
+    opacity: 0;
+    margin-top: -38%;
+}
 #section2{
     text-align: center;
 }
+#mainHeader{
+    font-size: 150%;
+    color: blue;
+    font-weight: 900;
+}
+hr{
+    margin: 0% 5%;
+}
 .courses{
+    width: 20%;
+    
+    margin: 0.5%;
     border: solid 1px black;
     display: inline-block;
     padding: 1%;
     border-radius: 1em;
+    display: inline-block;
+}
+.link{
+    background-color: blue;
+    color: white;
+    display: inline-block;
+    padding: 1% 5%;
 }
