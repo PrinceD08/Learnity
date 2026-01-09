@@ -1,6 +1,10 @@
 body {
       font-family: Arial, sans-serif;
-      background: #f5f7fb;
+      background: url(file_00000000103471f4b74df47335c6214b.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
       padding: 30px;
     }
 
@@ -10,10 +14,11 @@ body {
 
     input {
       margin: 20px 0;
+      background-color: rgba(255, 255, 255, 0);
     }
 
     #output {
-      background: white;
+      background: rgba(255, 255, 255, 0.722);
       padding: 20px;
       border-radius: 8px;
       max-height: 400px;
