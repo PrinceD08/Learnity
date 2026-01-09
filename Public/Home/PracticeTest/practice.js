@@ -58,21 +58,27 @@ input.addEventListener("change", async () => {
 // Helper: Send prompt to your AI backend
 // --------------------
 async function sendToAI(prompt) {
-  // Replace this URL with your AI backend endpoint
-  const res = await fetch("https://spectre-9h2s.onrender.com/api/openai", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ prompt })
-  });
+  try {
+    const res = await fetch("https://spectre-9h2s.onrender.com/api/openai", { // your backend URL
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt })
+    });
 
-  const data = await res.json();
+    const data = await res.json();
+    console.log("Backend response:", data); // 🔹 Debug log
 
-  // Adjust this depending on how your backend responds
-  return data.answer; // or data.choices[0].message.content
+    // Support multiple possible response formats
+    return data.answer || data.result || data.choices?.[0]?.message?.content || "No answer returned";
+
+  } catch (err) {
+    console.error("Error fetching AI response:", err);
+    throw err;
+  }
 }
 
 // --------------------
-// Generate Questions Button
+// Generate Questions Button with Automatic Retry
 // --------------------
 generateBtn.addEventListener("click", async () => {
   if (!extractedText) {
@@ -80,24 +86,38 @@ generateBtn.addEventListener("click", async () => {
     return;
   }
 
-  questionsDiv.textContent = "Generating questions...";
+  questionsDiv.textContent = "Sending request to backend…";
 
-  const prompt = `
+  let aiResponse = "";
+  let attempts = 0;
+  const maxAttempts = 10; // retry up to 10 times
+  const delay = 5000; // 5 seconds between retries
+
+  while (attempts < maxAttempts) {
+    try {
+      aiResponse = await sendToAI(`
 You are a helpful study assistant.
 Generate 5 study questions from the following text.
 Include the answers after each question.
 
 Text:
 ${extractedText}
-  `;
-
-  try {
-    const aiResponse = await sendToAI(prompt);
-
-    // Display AI output
-    questionsDiv.textContent = aiResponse;
-  } catch (err) {
-    console.error(err);
-    questionsDiv.textContent = "Error generating questions.";
+      `);
+      break; // success
+    } catch (err) {
+      attempts++;
+      console.log(`Attempt ${attempts} failed, retrying in ${delay/1000}s...`);
+      questionsDiv.textContent = `Backend may be sleeping or slow… waiting ${delay/1000} seconds. Attempt ${attempts} of ${maxAttempts}`;
+      await new Promise(res => setTimeout(res, delay));
+    }
   }
+
+  if (!aiResponse) {
+    questionsDiv.textContent = "Backend still unreachable after multiple attempts. Please try again later.";
+    return;
+  }
+
+  // Split the AI response into lines and show each line separately
+const lines = aiResponse.split(/\n+/).filter(line => line.trim() !== "");
+questionsDiv.innerHTML = lines.map(line => `<p>${line}</p>`).join("");
 });
