@@ -27,6 +27,7 @@ function applyDarkMode() {
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
+    document.getElementById("section1").style.backgroundColor = "rgba(24, 24, 24, 0.9)";
 
     // SAFE dashboard handling
     const dashboard = document.getElementById("dashboard");
@@ -45,10 +46,12 @@ function applyDarkMode() {
 function applyLightMode() {
     document.body.style.background = "rgb(244, 255, 255)";
     document.body.style.color = "black";
+    document.getElementById("section1").style.backgroundColor = "rgb(255, 255, 255)";
+    
 
     const dashboard = document.getElementById("dashboard");
     if (dashboard) {
-        dashboard.style.background = "transparent";
+        dashboard.style.backgroundImage = "url('DashboardL.png')";
     }
 
     removeShadow("profile");

@@ -1,6 +1,6 @@
-body {
+body, #body{
       font-family: Arial, sans-serif;
-      background: url(file_00000000103471f4b74df47335c6214b.png);
+      background: url(file_00000000751871f4a035f6c28ed9120e.png);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -14,7 +14,7 @@ body {
 
     input {
       margin: 20px 0;
-      background-color: rgba(255, 255, 255, 0);
+      
     }
 
     #output {
@@ -40,4 +40,27 @@ body {
   background: white;
   padding: 20px;
   border-radius: 8px;
+}
+
+#mainBorder{
+  text-align: center;
+}
+.border{
+  border: solid 1px black;
+  display: inline-block;
+  text-align: center;
+  border-radius: 1em;
+  width: 25%;
+  margin: 0% 2%;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.809);
+}
+.border:hover{
+  box-shadow: 0 0 20px rgb(101, 100, 100);
+}
+img{
+  width: 40%;
+  border-radius: 1em;
+  max-width: 100%;
+  max-height: 100%;
 }

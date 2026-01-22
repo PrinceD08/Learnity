@@ -65,11 +65,15 @@ body{
     margin-top: 70px;
 }
 #dashboard{
-    background: url(file_00000000103471f4b74df47335c6214b.png);
+    background: url('DashboardL.png');
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: right;
     padding-top: 7%;
+    padding-left: 3%;
+    padding-bottom: 2%;
+    border-radius: 1em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
     background-position-y: 30%;
 }
 .border, .border2{
