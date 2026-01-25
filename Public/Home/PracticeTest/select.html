@@ -7,9 +7,75 @@
     <meta name="description" content="">
     <title>SelectTestMethod</title>
     <link rel="stylesheet" href="practice.css">
+    <link rel="stylesheet" href="../home.css">
+    <script src="practice.js" defer></script>
+    <script src="../../darkMode.js" defer></script>
 </head>
-<body>
-    
+<body id="PTbody">
+
+    <button id="floating-menu-btn">☰</button>
+
+    <section id="section1">
+
+        <p id="header"><span>•</span>Learnity</p>
+
+
+    <!-- Home -->
+    <div class="nav-bar" onclick="window.location.href='../home.html'">
+        <div class="icon-container" data-icon="home"></div>
+        <span class="nav-text">Home</span>
+    </div>
+
+    <!-- Tutorials -->
+    <div class="nav-bar" onclick="window.location.href='../Tutorials/index-tur.html'">
+        <div class="icon-container" data-icon="tutorial"></div>
+        <span class="nav-text">Tutorials</span>
+    </div>
+
+    <!-- Study Guides -->
+    <div class="nav-bar" onclick="window.location.href='../Home/StudyGuide/study.html'">
+        <div class="icon-container" data-icon="study"></div>
+        <span class="nav-text">Study Guides</span>
+    </div>
+
+    <!-- Practice Tests -->
+    <div class="nav-bar" onclick="window.location.href='../Home/PracticeTest/select.html'">
+        <div class="icon-container" data-icon="test"></div>
+        <span class="nav-text">Practice Tests</span>
+    </div>
+
+    <!-- My Notes -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="notes"></div>
+        <span class="nav-text">My Notes</span>
+    </div>
+
+    <!-- AI Assistant -->
+    <div class="nav-bar" onclick="runAI()">
+        <div class="icon-container" data-icon="assistant"></div>
+        <span class="nav-text">AI Assistant</span>
+    </div>
+
+    <!-- Calculator -->
+    <div class="nav-bar" id="calcBtn">
+        <div class="icon-container" data-icon="calculator"></div>
+        <span class="nav-text">Calculator</span>
+    </div>
+
+    <!-- Notifications -->
+    <div class="nav-bar">
+        <div class="icon-container" data-icon="notification"></div>
+        <span class="nav-text">Notifications</span>
+    </div>
+
+    <!-- Settings -->
+    <div class="nav-bar" onclick="window.location.href='../Setting/setting.html'">
+        <div class="icon-container" data-icon="settings"></div>
+        <span class="nav-text">Settings</span>
+    </div>
+
+</section>
+
     <section id="mainBorder">
         <h1></h1>
         <p>Choose how you want to create your test</p>

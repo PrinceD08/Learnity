@@ -27,6 +27,10 @@ function applyDarkMode() {
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
+    document.getElementById("PTbody").style.background = "url('file.jpeg')";
+    document.getElementById("PTbody").style.backgroundRepeat = "no-repeat";
+    document.getElementById("PTbody").style.backgroundSize = "cover";
+    document.getElementById("PTbody").style.backgroundAttachment = "fixed";
     document.getElementById("section1").style.backgroundColor = "rgba(24, 24, 24, 0.9)";
 
     // SAFE dashboard handling
@@ -69,4 +73,11 @@ function setShadow(id) {
 function removeShadow(id) {
     const el = document.getElementById(id);
     if (el) el.style.boxShadow = "none";
+}
+
+function on() {
+    document.body.background = "url('PMode.mp4')";
+}
+function off(){
+
 }
