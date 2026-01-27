@@ -107,3 +107,41 @@ document.addEventListener("click", (event) => {
     outsideClickCount = 0;
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const calcBtn = document.getElementById("calcBtn");
+  const calculator = document.getElementById("calculatorFrame");
+
+  if (!calcBtn || !calculator) {
+    console.error("Calculator button or iframe not found");
+    return;
+  }
+
+  calcBtn.addEventListener("click", () => {
+    calculator.style.display =
+      calculator.style.display === "none" ? "block" : "none";
+  });
+});
+
+let outsideClickCount2 = 0;
+
+document.addEventListener("click", (event) => {
+  const calculator = document.getElementById("calculatorFrame");
+  const calcBtn = document.getElementById("calcBtn");
+
+  if (
+    calculator.style.display === "block" &&
+    !calculator.contains(event.target) &&
+    !calcBtn.contains(event.target)
+  ) {
+    outsideClickCount2++;
+
+    if (outsideClickCount2 >= 2) {
+      calculator.style.display = "none";
+      outsideClickCount2 = 0; // reset counter
+    }
+  } else {
+    outsideClickCount2 = 0;
+  }
+});

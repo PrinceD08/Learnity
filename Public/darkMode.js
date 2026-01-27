@@ -27,13 +27,18 @@ function applyDarkMode() {
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
-    document.getElementById("PTbody").style.background = "url('file.jpeg')";
-    document.getElementById("PTbody").style.backgroundRepeat = "no-repeat";
-    document.getElementById("PTbody").style.backgroundSize = "cover";
-    document.getElementById("PTbody").style.backgroundAttachment = "fixed";
-    document.getElementById("section1").style.backgroundColor = "rgba(24, 24, 24, 0.9)";
 
-    // SAFE dashboard handling
+    const ptBody = document.getElementById("PTbody");
+    if (ptBody) {
+        ptBody.style.backgroundImage = "url('file.jpeg')";
+        ptBody.style.backgroundRepeat = "no-repeat";
+        ptBody.style.backgroundSize = "cover";
+        ptBody.style.backgroundAttachment = "fixed";
+    }
+
+    const section1 = document.getElementById("section1");
+    if (section1) section1.style.backgroundColor = "rgba(24, 24, 24, 0.9)";
+
     const dashboard = document.getElementById("dashboard");
     if (dashboard) {
         dashboard.style.backgroundImage = "url('DaBackground.jpeg')";
@@ -48,15 +53,15 @@ function applyDarkMode() {
 }
 
 function applyLightMode() {
-    document.body.style.background = "rgb(244, 255, 255)";
+    document.body.style.backgroundImage = "none";
+    document.body.style.backgroundColor = "rgb(244, 255, 255)";
     document.body.style.color = "black";
-    document.getElementById("section1").style.backgroundColor = "rgb(255, 255, 255)";
-    
+
+    const section1 = document.getElementById("section1");
+    if (section1) section1.style.backgroundColor = "rgb(255, 255, 255)";
 
     const dashboard = document.getElementById("dashboard");
-    if (dashboard) {
-        dashboard.style.backgroundImage = "url('DashboardL.png')";
-    }
+    if (dashboard) dashboard.style.backgroundImage = "url('DashboardL.png')";
 
     removeShadow("profile");
     removeShadow("profile2");
@@ -75,9 +80,29 @@ function removeShadow(id) {
     if (el) el.style.boxShadow = "none";
 }
 
-function on() {
-    document.body.background = "url('PMode.mp4')";
-}
-function off(){
+// ----- Video Background -----
 
+function onVideoBackground() {
+    let video = document.getElementById("bgVideo");
+    if (!video) {
+        video = document.createElement("video");
+        video.id = "bgVideo";
+        video.src = "PMode.mp4";
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.style.position = "fixed";
+        video.style.top = "0";
+        video.style.left = "0";
+        video.style.width = "100%";
+        video.style.height = "100%";
+        video.style.objectFit = "cover";
+        video.style.zIndex = "-1";
+        document.body.appendChild(video);
+    }
+}
+
+function offVideoBackground() {
+    const video = document.getElementById("bgVideo");
+    if (video) video.remove();
 }

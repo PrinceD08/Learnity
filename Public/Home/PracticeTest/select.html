@@ -51,7 +51,7 @@
     </div>
 
     <!-- AI Assistant -->
-    <div class="nav-bar" onclick="runAI()">
+    <div class="nav-bar" onclick="window.location.href='../AIAssistant/index-ai.html'">
         <div class="icon-container" data-icon="assistant"></div>
         <span class="nav-text">AI Assistant</span>
     </div>
@@ -69,7 +69,7 @@
     </div>
 
     <!-- Settings -->
-    <div class="nav-bar" onclick="window.location.href='../Setting/setting.html'">
+    <div class="nav-bar" onclick="window.location.href='../See/setting.html'">
         <div class="icon-container" data-icon="settings"></div>
         <span class="nav-text">Settings</span>
     </div>
@@ -96,9 +96,17 @@
     <section id="mainBorder2">
         <h2>Test Options </h2>
         <hr>
-        <p>Choose Subject</p>
-        <p>Number Of Questions</p>
-        <p>Difficulty Level</p>
+        <p class="texts">Choose Subject</p>
+        <input type="text" id="subject" class="inputMethod" placeholder="Enter Subject">
+        <p class="texts">Number Of Questions</p>
+        <input type="number" id="NoQuestion" class="inputMethod" placeholder="Enter No of Questions" max="50" min="0">
+        <p class="texts">Difficulty Level</p>
+        <select name="" id="level" class="inputMethod">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <p id="generate">Create Questions</p>
     </section>
 </body>
 </html>

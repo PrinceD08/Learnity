@@ -21,6 +21,13 @@ body, #body{
       padding-right: 3%;
     }
 
+    .inputMethod{
+      margin: 0;
+      width: 20%;
+      height: 30px;
+      border-radius: 1em;
+      padding: 0.5% 1%;
+    }
     #output {
       background: rgba(255, 255, 255, 0.722);
       padding: 20px;
@@ -28,6 +35,11 @@ body, #body{
       max-height: 400px;
       overflow-y: auto;
       white-space: pre-wrap;
+    }
+    #generate{
+      background-color: dodgerblue;
+      padding: 2%;
+      
     }
     button {
   padding: 10px 20px;
