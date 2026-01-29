@@ -1,18 +1,29 @@
+function selectCourse(){
+  window.location.href = "#mainBorder";
+}
+
+// --------------------
+// Floating menu logic
+// --------------------
 const btn = document.getElementById("floating-menu-btn");
 const menu = document.getElementById("section1");
 
-btn.addEventListener("click", () => {
-    menu.style.display =
-        menu.style.display === "block" ? "none" : "block";
-});
+if (btn && menu) {
+  btn.addEventListener("click", () => {
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  });
 
-document.addEventListener("click", (e) => {
+  document.addEventListener("click", (e) => {
     if (!menu.contains(e.target) && !btn.contains(e.target)) {
-        menu.style.display = "none";
+      menu.style.display = "none";
     }
-});
+  });
+}
 
- const iconMap = {
+// --------------------
+// Icons
+// --------------------
+const iconMap = {
   dropdown: "../Icons/menu.svg",
   home: "../Icons/layout-dashboard.svg",
   tutorial: "../Icons/square-play.svg",
@@ -27,22 +38,21 @@ document.addEventListener("click", (e) => {
 
 document.querySelectorAll(".icon-container").forEach(container => {
   const iconName = container.dataset.icon;
-
   if (iconMap[iconName]) {
     const img = document.createElement("img");
     img.src = iconMap[iconName];
-    img.classList.add("icon");
+    img.className = "icon";
     container.appendChild(img);
   }
 });
 
-
 // --------------------
 // Global variables
 // --------------------
-let extractedText = "";  // will store the PDF text globally
+let extractedText = "";
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+  "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
 // --------------------
 // PDF Upload Handling
@@ -52,111 +62,113 @@ const output = document.getElementById("output");
 const generateBtn = document.getElementById("generateBtn");
 const questionsDiv = document.getElementById("questions");
 
-input.addEventListener("change", async () => {
-  const file = input.files[0];
-  if (!file) return;
+if (input && output) {
+  input.addEventListener("change", async () => {
+    const file = input.files[0];
+    if (!file) return;
 
-  output.textContent = "Reading PDF...";
+    output.textContent = "Reading PDF...";
 
-  const reader = new FileReader();
+    const reader = new FileReader();
 
-  reader.onload = async function () {
-    const typedArray = new Uint8Array(this.result);
-    const pdf = await pdfjsLib.getDocument(typedArray).promise;
+    reader.onload = async function () {
+      const typedArray = new Uint8Array(this.result);
+      const pdf = await pdfjsLib.getDocument(typedArray).promise;
 
-    let fullText = "";
+      let fullText = "";
 
-    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-      const page = await pdf.getPage(pageNum);
-      const textContent = await page.getTextContent();
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        const page = await pdf.getPage(pageNum);
+        const textContent = await page.getTextContent();
 
-      const pageText = textContent.items
-        .map(item => item.str)
-        .join(" ");
+        const pageText = textContent.items.map(i => i.str).join(" ");
+        const cleanText = pageText
+          .replace(/\s+/g, " ")
+          .replace(/-\s+/g, "")
+          .trim();
 
-      // Clean the text
-      const cleanText = pageText
-        .replace(/\s+/g, " ")
-        .replace(/-\s+/g, "")
-        .trim();
+        if (cleanText.toLowerCase().includes("references")) break;
 
-      fullText += "\n\n" + cleanText;
-    }
+        fullText += "\n\n" + cleanText;
+      }
 
-    // ✅ Store globally for AI
-    extractedText = fullText;
+      extractedText = fullText;
+      output.textContent = fullText;
+    };
 
-    // ✅ Show PDF text to user
-    output.textContent = fullText;
-  };
-
-  reader.readAsArrayBuffer(file);
-});
-
-// --------------------
-// Helper: Send prompt to your AI backend
-// --------------------
-async function sendToAI(prompt) {
-  try {
-    const res = await fetch("https://spectre-9h2s.onrender.com/api/openai", { // your backend URL
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ prompt })
-    });
-
-    const data = await res.json();
-    console.log("Backend response:", data); // 🔹 Debug log
-
-    // Support multiple possible response formats
-    return data.answer || data.result || data.choices?.[0]?.message?.content || "No answer returned";
-
-  } catch (err) {
-    console.error("Error fetching AI response:", err);
-    throw err;
-  }
+    reader.readAsArrayBuffer(file);
+  });
 }
 
 // --------------------
-// Generate Questions Button with Automatic Retry
+// Helper: Chunking
 // --------------------
-generateBtn.addEventListener("click", async () => {
-  if (!extractedText) {
-    alert("Upload a PDF first!");
-    return;
+function chunkText(text, maxLength = 2000) {
+  const chunks = [];
+  for (let i = 0; i < text.length; i += maxLength) {
+    chunks.push(text.slice(i, i + maxLength));
   }
+  return chunks;
+}
 
-  questionsDiv.textContent = "Sending request to backend…";
+// --------------------
+// AI Backend
+// --------------------
+async function sendToAI(prompt) {
+  const res = await fetch("https://spectre-9h2s.onrender.com/api/openai", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ prompt })
+  });
 
-  let aiResponse = "";
-  let attempts = 0;
-  const maxAttempts = 10; // retry up to 10 times
-  const delay = 5000; // 5 seconds between retries
+  const data = await res.json();
+  return (
+    data.answer ||
+    data.result ||
+    data.choices?.[0]?.message?.content ||
+    ""
+  );
+}
 
-  while (attempts < maxAttempts) {
-    try {
-      aiResponse = await sendToAI(`
+// --------------------
+// Generate Questions
+// --------------------
+if (generateBtn && questionsDiv) {
+  generateBtn.addEventListener("click", async () => {
+    if (!extractedText) {
+      alert("Upload a PDF first!");
+      return;
+    }
+
+    questionsDiv.innerHTML = "Generating questions…<br><br>";
+
+    const chunks = chunkText(extractedText, 2000);
+    let allQuestions = "";
+
+    for (let i = 0; i < chunks.length; i++) {
+      questionsDiv.innerHTML += `<p>Processing part ${i + 1} of ${chunks.length}...</p>`;
+
+      try {
+        const response = await sendToAI(`
 You are a helpful study assistant.
-Generate 5 study questions from the following text.
-Include the answers after each question.
+Generate 3 study questions from the text below.
+Include answers after each question.
 
 Text:
-${extractedText}
-      `);
-      break; // success
-    } catch (err) {
-      attempts++;
-      console.log(`Attempt ${attempts} failed, retrying in ${delay/1000}s...`);
-      questionsDiv.textContent = `Backend may be sleeping or slow… waiting ${delay/1000} seconds. Attempt ${attempts} of ${maxAttempts}`;
-      await new Promise(res => setTimeout(res, delay));
+${chunks[i]}
+        `);
+
+        allQuestions += "\n" + response;
+      } catch (err) {
+        console.error("Chunk failed:", err);
+        allQuestions += "\n[Skipped a section due to error]\n";
+      }
+
+      // yield to UI (prevents freezing)
+      await new Promise(r => setTimeout(r, 50));
     }
-  }
 
-  if (!aiResponse) {
-    questionsDiv.textContent = "Backend still unreachable after multiple attempts. Please try again later.";
-    return;
-  }
-
-  // Split the AI response into lines and show each line separately
-const lines = aiResponse.split(/\n+/).filter(line => line.trim() !== "");
-questionsDiv.innerHTML = lines.map(line => `<p>${line}</p>`).join("");
-});
+    const lines = allQuestions.split(/\n+/).filter(Boolean);
+    questionsDiv.innerHTML = lines.map(l => `<p>${l}</p>`).join("");
+  });
+}

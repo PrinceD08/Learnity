@@ -1,45 +1,43 @@
-body, #body{
+body{
       font-family: Arial, sans-serif;
-      background: url(file_00000000751871f4a035f6c28ed9120e.png);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
       padding: 30px;
-    }
-
-    h1 {
+}
+#body{
+      color: black;
+}
+h1 {
       color: #2c3e50;
-    }
-
-    input {
+}
+input {
       margin: 20px 0;
-      
-    }
-    #floating-menu-btn{
+}
+#floating-menu-btn{
       text-align: center;
       padding-right: 3%;
-    }
-
-    .inputMethod{
+}
+.inputMethod{
       margin: 0;
       width: 20%;
       height: 30px;
       border-radius: 1em;
       padding: 0.5% 1%;
-    }
-    #output {
+}
+#output {
       background: rgba(255, 255, 255, 0.722);
       padding: 20px;
       border-radius: 8px;
       max-height: 400px;
       overflow-y: auto;
-      white-space: pre-wrap;
+      color: black;
     }
-    #generate{
+#generate{
       background-color: dodgerblue;
-      padding: 2%;
-      
+      padding: 1% 2%;
+      width: 13%;
+      border-radius: 1em;
+    }
+    #generate:hover{
+      box-shadow: 0 0 20px dodgerblue;
     }
     button {
   padding: 10px 20px;
@@ -56,6 +54,7 @@ body, #body{
   background: white;
   padding: 20px;
   border-radius: 8px;
+  color: black;
 }
 
 #mainBorder{
