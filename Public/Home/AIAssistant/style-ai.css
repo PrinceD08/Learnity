@@ -47,10 +47,10 @@ body{
 }
 @media (max-width: 640px) and (orientation: portrait){
     #text{
-        width: 90%;
+        width: 97%;
     }
     #output{
-        width: 90%;
+        width: 97%;
         margin-bottom: 40%;
     }
     #insert{

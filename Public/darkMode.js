@@ -50,6 +50,7 @@ function applyDarkMode() {
     setShadow("profile");
     setShadow("profile2");
     setShadow("profile3");
+    setShadow("profile4")
 }
 
 function applyLightMode() {
@@ -66,6 +67,7 @@ function applyLightMode() {
     removeShadow("profile");
     removeShadow("profile2");
     removeShadow("profile3");
+    removeShadow("profile4");
 }
 
 // ----- Helpers -----
@@ -82,15 +84,17 @@ function removeShadow(id) {
 
 // ----- Video Background -----
 
-function onVideoBackground() {
+function onVideoBackground(fromStorage = false) {
     let video = document.getElementById("bgVideo");
+
     if (!video) {
         video = document.createElement("video");
         video.id = "bgVideo";
-        video.src = "PMode.mp4";
+        video.src = localStorage.getItem("videoBgSrc") || "PMode.mp4";
         video.autoplay = true;
         video.loop = true;
         video.muted = true;
+
         video.style.position = "fixed";
         video.style.top = "0";
         video.style.left = "0";
@@ -98,11 +102,20 @@ function onVideoBackground() {
         video.style.height = "100%";
         video.style.objectFit = "cover";
         video.style.zIndex = "-1";
+
         document.body.appendChild(video);
+    }
+
+    // Save state ONLY when user enables it
+    if (!fromStorage) {
+        localStorage.setItem("videoBg", "on");
+        localStorage.setItem("videoBgSrc", "PMode.mp4");
     }
 }
 
 function offVideoBackground() {
     const video = document.getElementById("bgVideo");
     if (video) video.remove();
+
+    localStorage.setItem("videoBg", "off");
 }
