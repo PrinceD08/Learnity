@@ -84,38 +84,27 @@ function removeShadow(id) {
 
 // ----- Video Background -----
 
-function onVideoBackground(fromStorage = false) {
-    let video = document.getElementById("bgVideo");
+document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("bgVideo");
 
-    if (!video) {
-        video = document.createElement("video");
-        video.id = "bgVideo";
-        video.src = localStorage.getItem("videoBgSrc") || "PMode.mp4";
-        video.autoplay = true;
-        video.loop = true;
-        video.muted = true;
-
-        video.style.position = "fixed";
-        video.style.top = "0";
-        video.style.left = "0";
-        video.style.width = "100%";
-        video.style.height = "100%";
-        video.style.objectFit = "cover";
-        video.style.zIndex = "-1";
-
-        document.body.appendChild(video);
+    if (localStorage.getItem("videoBg") === "on") {
+        video.src = "PMode.mp4";
+        video.style.display = "block";
+        video.play().catch(() => {});
     }
+});
 
-    // Save state ONLY when user enables it
-    if (!fromStorage) {
-        localStorage.setItem("videoBg", "on");
-        localStorage.setItem("videoBgSrc", "PMode.mp4");
-    }
+function onVideoBackground() {
+    const video = document.getElementById("bgVideo");
+    video.src = "PMode.mp4";
+    video.style.display = "block";
+    video.play().catch(() => {});
+    localStorage.setItem("videoBg", "on");
 }
 
 function offVideoBackground() {
     const video = document.getElementById("bgVideo");
-    if (video) video.remove();
-
+    video.pause();
+    video.style.display = "none";
     localStorage.setItem("videoBg", "off");
 }
