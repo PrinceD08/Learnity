@@ -4,20 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <title>SelectTestMethod</title>
-    <link rel="stylesheet" href="practice.css">
+    <meta name="description" content="Notifications">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="noti.css">
     <link rel="stylesheet" href="../home.css">
-    <script src="practice.js" defer></script>
     <script src="../../darkMode.js" defer></script>
+    <script src="noti.js" defer></script>
 </head>
 <body>
 
-    <button id="floating-menu-btn">☰</button>
+    <video id="bgVideo" autoplay muted loop playsinline style="
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+    display:none;">
+</video>
 
+     <iframe src="../../Calculator/calc.html" id="calculatorFrame" class="calculator-frame"></iframe>
+    <button id="floating-menu-btn">☰</button>
     <section id="section1">
 
-        <p id="header"><span>•</span>Learnity</p>
+        <p id="header"><span>•</span>Active</p>
 
 
     <!-- Home -->
@@ -33,13 +44,13 @@
     </div>
 
     <!-- Study Guides -->
-    <div class="nav-bar" onclick="window.location.href='../Home/StudyGuide/study.html'">
+    <div class="nav-bar">
         <div class="icon-container" data-icon="study"></div>
         <span class="nav-text">Study Guides</span>
     </div>
 
     <!-- Practice Tests -->
-    <div class="nav-bar" onclick="window.location.href='../Home/PracticeTest/select.html'">
+    <div class="nav-bar" onclick="window.location.href='../PracticeTest/select.html'">
         <div class="icon-container" data-icon="test"></div>
         <span class="nav-text">Practice Tests</span>
     </div>
@@ -51,7 +62,7 @@
     </div>
 
     <!-- AI Assistant -->
-    <div class="nav-bar" onclick="window.location.href='../AIAssistant/index-ai.html'">
+    <div class="nav-bar" onclick="runAI()">
         <div class="icon-container" data-icon="assistant"></div>
         <span class="nav-text">AI Assistant</span>
     </div>
@@ -69,43 +80,18 @@
     </div>
 
     <!-- Settings -->
-    <div class="nav-bar" onclick="window.location.href='../../Setting/setting.html'">
+    <div class="nav-bar" onclick="window.location.href='../../setting.html'">
         <div class="icon-container" data-icon="settings"></div>
         <span class="nav-text">Settings</span>
     </div>
 
-</section>
+    </section>
 
-    <section id="mainBorder">
-        <h1>Choose how you want to create your test</h1>
-        <div class="border" onclick="window.location.href='practice.html'">
-            <img src="file_00000000184871f4b344752c9ebcd9d3~3.jpg" alt="Image">
-            <p>PDF to Test</p>
-        </div>
-        <div class="border" onclick="selectCourse()">
-            <img src="file_00000000184871f4b344752c9ebcd9d3~2.jpg" alt="Image">
-            <p>Select Course</p>
-        </div>
-        <div class="border">
-            <img src="file_00000000184871f4b344752c9ebcd9d3~3.jpg" alt="Image">
-            <p>Create From Scratch</p>
-        </div>
+    <section id="section2">
+
+        <h1>Notifications</h1>
+        <p id="notification">“Welcome to Learnity! We're thrilled to have you on board. Start exploring a world of knowledge, and let's make learning an adventure together!”</p>
     </section>
-    <hr>
-    <section id="mainBorder2">
-        <h2>Test Options </h2>
-        <hr>
-        <p class="texts">Choose Course</p>
-        <input type="text" id="subject" class="inputMethod" placeholder="Enter Subject">
-        <p class="texts">Number Of Questions</p>
-        <select id="NoQuestion" class="inputMethod"></select>
-        <p class="texts">Difficulty Level</p>
-        <select name="" id="level" class="inputMethod">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-        </select>
-        <p id="generate">Create Questions</p>
-    </section>
+    
 </body>
 </html>

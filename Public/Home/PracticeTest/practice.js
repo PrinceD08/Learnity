@@ -2,6 +2,16 @@ function selectCourse(){
   window.location.href = "#mainBorder";
 }
 
+const select = document.getElementById("NoQuestion");
+
+  for (let i = 1; i <= 50; i++) {
+    const option = document.createElement("option");
+    option.value = i;
+    option.textContent = i;
+    select.appendChild(option);
+  }
+
+
 // --------------------
 // Floating menu logic
 // --------------------
