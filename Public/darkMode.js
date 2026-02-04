@@ -50,7 +50,17 @@ function applyDarkMode() {
     setShadow("profile");
     setShadow("profile2");
     setShadow("profile3");
-    setShadow("profile4")
+    setShadow("profile4");
+
+    // ✅ VIDEO WORKS ONLY IN DARK MODE
+    if (localStorage.getItem("videoBg") === "on") {
+        const video = document.getElementById("bgVideo");
+        if (video) {
+            video.src = "PMode.mp4";
+            video.style.display = "block";
+            video.play().catch(() => {});
+        }
+    }
 }
 
 function applyLightMode() {
@@ -68,6 +78,13 @@ function applyLightMode() {
     removeShadow("profile2");
     removeShadow("profile3");
     removeShadow("profile4");
+
+    // ❌ FORCE VIDEO OFF IN LIGHT MODE
+    const video = document.getElementById("bgVideo");
+    if (video) {
+        video.pause();
+        video.style.display = "none";
+    }
 }
 
 // ----- Helpers -----
@@ -85,26 +102,45 @@ function removeShadow(id) {
 // ----- Video Background -----
 
 document.addEventListener("DOMContentLoaded", () => {
+    const theme = localStorage.getItem("theme");
     const video = document.getElementById("bgVideo");
 
-    if (localStorage.getItem("videoBg") === "on") {
-        video.src = "PMode.mp4";
-        video.style.display = "block";
-        video.play().catch(() => {});
+    if (theme === "dark" && localStorage.getItem("videoBg") === "on") {
+        if (video) {
+            video.src = "PMode.mp4";
+            video.style.display = "block";
+            video.play().catch(() => {});
+        }
+    } else {
+        if (video) {
+            video.pause();
+            video.style.display = "none";
+        }
     }
 });
 
 function onVideoBackground() {
-    const video = document.getElementById("bgVideo");
-    video.src = "PMode.mp4";
-    video.style.display = "block";
-    video.play().catch(() => {});
+    if (localStorage.getItem("theme") !== "dark") {
+        alert("Video background works only in dark mode 🌙");
+        return;
+    }
+
     localStorage.setItem("videoBg", "on");
+
+    const video = document.getElementById("bgVideo");
+    if (video) {
+        video.src = "PMode.mp4";
+        video.style.display = "block";
+        video.play().catch(() => {});
+    }
 }
 
 function offVideoBackground() {
-    const video = document.getElementById("bgVideo");
-    video.pause();
-    video.style.display = "none";
     localStorage.setItem("videoBg", "off");
+
+    const video = document.getElementById("bgVideo");
+    if (video) {
+        video.pause();
+        video.style.display = "none";
+    }
 }

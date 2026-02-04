@@ -1,0 +1,30 @@
+#noteSection{
+    margin-top: 7%;
+    margin-left: 7%;
+}
+h1{
+    text-align: left;
+}
+#noteInput{
+    width: 70%;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.57);
+    color: black;
+    padding: 2%;
+    border-radius: 1em;
+}
+#saveBtn{
+    display: block;
+    background-color: rgb(30, 64, 255);
+    padding: 1% 2%;
+    border-radius: 1em;
+    color: white;
+    font-weight: 700;
+    margin-top: 1%;
+}
+#savedNotes{
+    width: 70%;
+    padding: 2%;
+    border-radius: 1em;
+    background-color: rgba(255, 255, 255, 0.566);
+}

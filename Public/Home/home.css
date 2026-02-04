@@ -62,7 +62,8 @@ body{
 #heading2{
     font-size: 200%;
     font-weight: 700;
-    margin-top: 70px;
+    margin-top: 40px;
+    margin-bottom: 100px;
 }
 #dashboard{
     background: url('DashboardL.png');
@@ -102,20 +103,32 @@ span{
     font-weight: 700;
 }
 .blue{
-    background: linear-gradient(to right, dodgerblue,rgb(83, 169, 255));
+    background: linear-gradient(to right, dodgerblue,rgb(167, 211, 255));
+    background-size: 200%;
     color: white;
+    animation: move 2s ease-in-out infinite alternate;
+}
+@keyframes move{
+    0%{background-position: 0%;}
+    100%{background-position: 100%;}
 }
 .orange{
     background: linear-gradient(to right, orange, orangered);
+    background-size: 200%;
     color: white;
+    animation: move 2s ease-in-out infinite alternate;
 }
 .green{
     background: linear-gradient(to right, rgb(91, 135, 91), rgb(37, 101, 37));
+    background-size: 200%;
     color: white;
+    animation: move 2s ease-in-out infinite alternate;
 }
 .grey{
     background-color: rgb(200, 200, 200);
+    background-size: 200%;
     color: white;
+    animation: move 2s ease-in-out infinite alternate;
 }
 img{
     width: 100%;
@@ -142,7 +155,7 @@ img{
     transition: 1s;
 }
 #Learning-bar{
-    height: 600px;
+    height: 670px;
     text-align: left;
     padding-left: 2%;
     

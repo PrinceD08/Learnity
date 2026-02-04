@@ -1,14 +1,14 @@
 const iconMap = {
   dropdown: "../../HomeIcons/menu.svg",
-  home: "../Home/Icons/layout-dashboard.svg",
-  tutorial: "../Home/Icons/square-play.svg",
-  study: "../Home/Icons/book-open.svg",
-  test: "../Home/Icons/book-text.svg",
-  notes: "../Home/Icons/book.svg",
-  assistant: "../Home/Icons/sparkles.svg",
-  calculator: "../Home/Icons/calculator.svg",
-  notification: "../Home/Icons/bell.svg",
-  settings: "../Home/Icons/settings.svg",
+  home: "../../Home/Icons/layout-dashboard.svg",
+  tutorial: "../../Home/Icons/square-play.svg",
+  study: "../../Home/Icons/book-open.svg",
+  test: "../../Home/Icons/book-text.svg",
+  notes: "../../Home/Icons/book.svg",
+  assistant: "../../Home/Icons/sparkles.svg",
+  calculator: "../../Home/Icons/calculator.svg",
+  notification: "../../Home/Icons/bell.svg",
+  settings: "../../Home/Icons/settings.svg",
 };
 
 document.querySelectorAll(".icon-container").forEach(container => {
