@@ -39,6 +39,25 @@ span{
 #login{
     background-color: blue;
 }
+#installBtn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #007bff; /* Blue background */
+      border-radius: 1em;
+      color: white; /* White text */
+      border: none;
+      padding: 10px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      z-index: 1000;
+      display: none; /* Hidden by default */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    #installBtn:hover {
+      background-color: #0056b3;
+    }
 #register:hover, #login:hover{
     transform: scale(1.02);
     transition: 1s;
