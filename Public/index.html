@@ -14,6 +14,7 @@
 <meta property="og:url" content="https://learnity-uaak.onrender.com/">
     <title>Learnity</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <section id="mainborder">
@@ -25,5 +26,14 @@
     <footer id="footer">
         <p>By continuing, you agree to our <span onclick="window.location.href='TS.html'">Terms of Service</span> and <span  onclick="window.location.href='policies.html'">Privacy Policy</span></p>
     </footer>
+
+    <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js')
+    .then(() => console.log('Service Worker registered'));
+}
+</script>
+
+
 </body>
 </html>
