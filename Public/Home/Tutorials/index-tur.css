@@ -26,6 +26,9 @@ body{
 #search:hover{
     background-color: dodgerblue;
 }
+#loading{
+    opacity: 0;
+}
 iframe{
     margin: 2% 2%;
     text-align: center;

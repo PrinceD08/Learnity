@@ -38,23 +38,26 @@ document.querySelectorAll(".icon-container").forEach(container => {
 
 
 function searchVideos() {
-const API_KEY = "AIzaSyByDNqVY9GVT9Dm1TTjsanw0DPglZLruO4"; // Replace with your key
-const query = document.getElementById("searchBar").value || "tutorials"; 
-const maxResults = 5;
+  const query = document.getElementById("searchBar").value || "tutorials";
+  const container = document.getElementById("videos");
+  container.innerHTML = ""; // clear old results
 
-fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${encodeURIComponent(query)}&maxResults=${maxResults}&key=${API_KEY}`)
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById("videos");
-    data.items.forEach(video => {
-      const iframe = document.createElement("iframe");
-      iframe.width = "560";
-      iframe.height = "315";
-      iframe.src = `https://www.youtube.com/embed/${video.id.videoId}`;
-      iframe.frameBorder = "0";
-      iframe.allowFullscreen = true;
-      container.appendChild(iframe);
-    });
-  })
-  .catch(err => console.error(err));
+  fetch('https://learnity-youtube-backend.vercel.app/api/youtube?q=' + encodeURIComponent(query), {
+  headers: { "x-learnity-key": "learnity123" }
+})
+    .then(res => res.json())
+    .then(data => {
+      if (!data.items) return;
+
+      data.items.forEach(video => {
+        const iframe = document.createElement("iframe");
+        iframe.width = "560";
+        iframe.height = "315";
+        iframe.src = `https://www.youtube.com/embed/${video.id.videoId}`;
+        iframe.frameBorder = "0";
+        iframe.allowFullscreen = true;
+        container.appendChild(iframe);
+      });
+    })
+    .catch(err => console.error(err));
 }
